@@ -26,6 +26,7 @@ Tecnologías utilizadas:
 - Maven
 - Hibernate
 - Mockito
+- JUnit
 - Spark
 - HTML
 - CSS
