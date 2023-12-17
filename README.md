@@ -1,3 +1,25 @@
+# Rescate de Patitas
+
+Trabajo Práctico anual hecho en el año 2021 de la materia Diseño de Sistemas en UTN FRBA.
+
+Objetivo:
+Diseñar e implementar un sistema para el registro y seguimiento de mascotas en el ámbito de las Asociaciones sin fines de lucro que se encargan de recuperar mascotas y encontrar familias responsables para su adopción.
+El sistema de Información contará con las siguientes funcionalidades:
+• Dar en adopción una mascota
+• Adoptar una mascota
+• Registrar mi mascota
+• Encontrar una mascota perdida que no es mia
+• Encontrar a mi mascota que estaba perdida
+• Encontrar un hogar de tránsito
+
+Integrantes:
+- María Paula Baldivia
+- Antonella Bevilacqua
+- Ezequiel MartÍn Castiglione
+- Ivan Gonzalez Martin
+- Gonzalo Javier Garcia
+- Leonel Lucas Morsella
+
 # java-base-project
 
 Esta es una plantilla de proyecto diseñada para: 
