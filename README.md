@@ -3,6 +3,7 @@
 Trabajo Práctico anual hecho en el año 2021 de la materia Diseño de Sistemas en UTN FRBA.
 
 Objetivo:
+
 Diseñar e implementar un sistema para el registro y seguimiento de mascotas en el ámbito de las Asociaciones sin fines de lucro que se encargan de recuperar mascotas y encontrar familias responsables para su adopción.
 El sistema de Información contará con las siguientes funcionalidades:
 • Dar en adopción una mascota
@@ -13,12 +14,22 @@ El sistema de Información contará con las siguientes funcionalidades:
 • Encontrar un hogar de tránsito
 
 Integrantes:
-- María Paula Baldivia
-- Antonella Bevilacqua
-- Ezequiel MartÍn Castiglione
-- Ivan Gonzalez Martin
-- Gonzalo Javier Garcia
-- Leonel Lucas Morsella
+• María Paula Baldivia
+• Antonella Bevilacqua
+• Ezequiel MartÍn Castiglione
+• Ivan Gonzalez Martin
+• Gonzalo Javier Garcia
+• Leonel Lucas Morsella
+
+Tecnologías utilizadas:
+• Java 8
+• Maven
+• Hibernate
+• Mockito
+• Spark
+• HTML
+• CSS
+• Bootstrap
 
 # java-base-project
 
