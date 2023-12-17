@@ -1,0 +1,33 @@
+{{#partial "contenido"}}
+{{#if mensajeVerde}}
+<div class="alert alert-success" role="alert">
+    {{mensajeVerde}}
+</div>
+{{/if}}
+{{#if mensajeRojo}}
+<div class="alert alert-danger" role="alert">
+    {{mensajeRojo}}
+</div>
+{{/if}}
+
+<div class="container-fluid border border-secondary rounded-3 p-3 mb-3">
+    <h2> Editar caracteristica </h2>
+    <form method="POST" class="row gx-3 align-items-center ">
+        <div class="col-1">
+            <label for="inputNombre" class="col-form-label">Nombre:</label>
+        </div>
+        <div class="col-4">
+            <input required type="text" id="inputNombre" name="inputNombre" class="form-control"
+                placeholder="Nombre nuevo para la caracteristica">
+        </div>
+        <div class="col-2">
+            <button type="submit" class="btn btn-success">Guardar</button>
+        </div>
+    </form>
+    <form method="GET" action="/caracteristicas/">
+        <button type="submit" class="btn btn-link">Volver</button>
+    </form>
+</div>
+{{/partial}}
+
+{{>layout-navbar.hbs}}

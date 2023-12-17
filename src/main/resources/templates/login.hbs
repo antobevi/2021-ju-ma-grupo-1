@@ -1,0 +1,44 @@
+{{#partial "contenido"}}
+    <div class ="splash-container">
+        <div class ="card">
+            <div class ="card-header text-center">
+                <h2>Rescate de Patitas</h2><span class="splash-description"></span><span class="
+                splash-description">Ingrese sus credenciales</span></div>
+            <div class = card-body>
+                <form action = "/login" method="post">
+                    <div class="form-group">
+                        <input name="Username" class="form-control form-control-lg" id="username" type="text" autocomplete="off"
+                               placeholder="Usuario" value="{{username}}">
+                    </div>
+                    <div class="form-group">
+                        <input name="Password" class="form-control form-control-lg" id="password" type="password" autocomplete="off"
+                               placeholder="Clave">
+                    </div>
+
+
+                    {{#if mensajeError}}
+                    <div class="alert alert-danger w-50 m-auto text-center p-2" role="alert">
+                        <span>{{mensajeError}}</span>
+                    </div>
+                    {{/if}}
+
+                    <div class="row mt-4 w-25 m-auto">
+                        <button type="submit" class="btn btn-primary btn-block">Ingresar</button>
+                    </div>
+                </form>
+            </div>
+            <div class="card-footer bg-white p-0 text-center">
+                <div class="card-footer-item card-footer-item-bordered">
+                        <a href="/registro-duenio" class="footer-link">Crear una cuenta</a>
+                </div>
+                <div class="card-footer-item card-footer-item-bordered">
+                    <a href="#" class="footer-link">Recuperar Clave</a>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+{{/partial}}
+
+{{>layout.hbs}}

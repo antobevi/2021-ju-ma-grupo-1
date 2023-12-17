@@ -1,0 +1,17 @@
+{{#partial "contenido"}}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.js"
+    integrity="sha512-is1ls2rgwpFZyixqKFEExPHVUUL+pPkBEPw47s/6NDQ4n1m6T/ySeDW3p54jp45z2EJ0RSOgilqee1WhtelXfA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<div class="d-flex justify-content-center">
+    <div>
+        <h3>Codigo QR</h3>
+        <div id="qrcode" class="mb-2"></div>
+        <a href="/mascotas">Volver</a>
+    </div>
+</div>
+<script>
+    const qrCode = new QRCode(document.getElementById("qrcode"), "https://rescate-patitas-grupo1.herokuapp.com/encontradas/{{id}}/new");
+</script>
+{{/partial}}
+
+{{>layout-navbar.hbs}}

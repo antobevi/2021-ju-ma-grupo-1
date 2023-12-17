@@ -1,0 +1,104 @@
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    height: 100%;
+    min-height: 100%;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+}
+
+
+.divider-bottom {
+    border-bottom: 1px solid;
+    border-color: inherit;
+    padding-bottom: 0.5rem;
+}
+
+
+body {
+    margin: 0 0 60px 0;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    height: 30px;
+    width: 100%;
+}
+
+.last-row tr:last-child td {
+    border-bottom: none;
+}
+
+.main-center-container {
+    width: 60% !important;
+    margin: 2rem auto auto auto !important;
+}
+
+.sin-imagen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1.25rem;
+    background: #adadad;
+}
+
+/* Para sacar iconos y bordes verdes cuando el input es valido */
+.was-validated .form-control:valid,
+.was-validated .form-select:valid {
+    border-color: #CED4DB;
+    background-image: none !important;
+}
+
+.was-validated .form-control:valid:focus,
+.was-validated .form-select:valid:focus {
+    box-shadow: 0 0 0 0.25rem #0d6efd40;
+    border-color: #CED4DB;
+}
+
+.was-validated .form-check-input:valid{
+    border-color: rgba(0,0,0,.25);
+}
+
+.was-validated .form-check-input:valid:checked{
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+}
+
+.was-validated .form-check-input:valid:focus{
+    box-shadow: 0 0 0 0.25rem #0d6efd40;
+}
+
+.was-validated .form-check-input:valid~.form-check-label {
+    color: inherit;
+}
+
+.boton-personalizado {
+    text-decoration:none;
+    font-weight: 600;
+    font-size: 20px;
+    color:#ff4500;
+    background-color:#ffA500;
+    border-color: #ffA500;
+    border-width: 3px;
+    border-style: solid;
+    border-radius:35px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+/* Este es el estilo al poner el cursor encima del boton */
+.boton-personalizado1:hover {
+    background-color:#ff4500;
+    color: #ffA500;
+    border-color: #ff4500;
+}

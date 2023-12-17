@@ -1,0 +1,102 @@
+{{#partial "contenido"}}
+
+    <h1>Nuevo dueño</h1>
+
+    <form method ="POST" action="/confirmar-creacion" class="needs-validation" novalidate>
+
+        <div class="row">
+         <div class="col-6 ">
+              <label for="nombre" class="form-label">Nombre completo: </label>
+              <input type="text" class="form-control" placeholder="Nombre completo" name="Nombre" value="{{nombre}}" required>
+              <span class="invalid-feedback">Este campo es requerido.</span>
+         </div>
+        </div>
+        <div class="row">
+         <div class="col-6 ">
+                       <label for="FechaNacimiento" class="form-label">Fecha de nacimiento: </label>
+                       <input type="date" class="form-control" placeholder="Fecha de nacimiento" name="FechaNacimiento" value="{{fechaNacimiento}}" required>
+                       <span class="invalid-feedback">Este campo es requerido.</span>
+          </div>
+        </div>
+         <div class="row">
+                            <div class="col-6 ">
+                                <label for="TIPODOCUMENTO" class="form-label">Seleccione tipo de documento: </label>
+                                <select class="form-select" id="tipoDocumento" name="TIPODOCUMENTO" required>
+                                    <option value="" selected disabled hidden>Seleccionar</option>
+                                    <option value="DNI" {{#if dni}} selected {{/if}}>DNI</option>
+                                    <option value="LC" {{#if lc}} selected {{/if}}>LC</option>
+                                    <option value="LE" {{#if le}} selected {{/if}}>LE</option>
+                                    <option value="CI" {{#if ci}} selected {{/if}}>CI</option>
+                                </select>
+                                <span class="invalid-feedback">Este campo es requerido.</span>
+                            </div>
+
+
+        <div class="col-6 ">
+                      <label for="Numero" class="form-label">Numero de documento: </label>
+                      <input type="number" class="form-control" placeholder="Numero de documento" name="Numero" value="{{numeroDocumento}}" required>
+                      <span class="invalid-feedback">Este campo es requerido.</span>
+        </div>
+
+          <div class="col-6 ">
+                              <label for="username" class="form-label">Nombre de usuario: </label>
+                              <input type="text" class="form-control" placeholder="Usuario" name="username" required>
+                              <span class="invalid-feedback">Este campo es requerido.</span>
+           </div>
+
+           <div class="col-6 ">
+                                         <label for="password" class="form-label">Contraseña: </label>
+                                         <input type="password" class="form-control" placeholder="Contraseña" name="password" value="{{password}}" required>
+                                         <span class="invalid-feedback">Este campo es requerido.</span>
+                      </div>
+
+
+
+
+        <h3>Datos de contacto</h3>
+
+
+        <div class="col-6 ">
+             <label for="NombreContacto" class="form-label">Nombre: </label>
+             <input type="text" class="form-control" placeholder="Nombre" name="NombreContacto" value="{{nombreContacto}}" required>
+             <span class="invalid-feedback">Este campo es requerido.</span>
+        </div>
+
+        <div class="col-6 ">
+                     <label for="ApellidoContacto" class="form-label">Apellido: </label>
+                     <input type="text" class="form-control" placeholder="Apellido" name="ApellidoContacto" value="{{apellidoContacto}}" required>
+                     <span class="invalid-feedback">Este campo es requerido.</span>
+        </div>
+
+       <div class="col-6 ">
+                            <label for="TelefonoContacto" class="form-label">Telefono: </label>
+                            <input type="text" class="form-control" placeholder="Telefono" name="TelefonoContacto" value="{{telefonoContacto}}" required>
+                            <span class="invalid-feedback">Este campo es requerido.</span>
+               </div>
+
+        <div class="col-6 ">
+                                    <label for="EmailContacto" class="form-label">Email: </label>
+                                    <input type="text" class="form-control" placeholder="Email" name="EmailContacto" value="{{emailContacto}}" required>
+                                    <span class="invalid-feedback">Este campo es requerido.</span>
+                       </div>
+       </div>
+
+       {{#if mensajeError}}
+       <div class="row mt-4">
+            <div class="alert alert-danger w-50 m-auto text-center p-2" role="alert">
+                <span>{{mensajeError}}</span>
+            </div>
+       </div>
+       {{/if}}
+
+        <div class="col-4 m-auto mt-4">
+            <button type="submit" class="btn btn-primary w-100">Confirmar</button>
+        </div>
+
+    </form>
+
+
+
+{{/partial}}
+
+{{>layout.hbs}}

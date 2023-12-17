@@ -1,0 +1,132 @@
+{{#partial "contenido"}}
+    {{#if mascotaEncontrada}}
+        <div class="alert alert-success w-75 m-auto text-center p-2 main-center-container" role="alert">
+            <span>Mascota encontrada registrada correctamente!</span>
+            <a href="/home">Ir al home</a>
+        </div>
+    {{/if}}
+
+    {{#if mensajeError}}
+        <div class="alert alert-danger w-75 m-auto text-center p-2 main-center-container" role="alert">
+            <span>{{mensajeError}}</span>
+        </div>
+    {{/if}}
+
+<div class="card main-center-container" >
+
+    <form class="border border-dark p-3 needs-validation" novalidate {{#if id}} action="/encontradas/{{id}}/new" method="POST" {{else}} action="/encontradas/new" method="POST" {{/if}}>
+
+        <h5> Datos del rescatista  </h5>
+        <div class="row">
+            <div class="col-6 ">
+                <label for="nombre-rescatista" class="form-label">Nombre: </label>
+                <input type="text" class="form-control" placeholder="Nombre" name="nombre-rescatista" required>
+                <span class="invalid-feedback">Este campo es requerido.</span>
+            </div>
+            <div class="col-6 ">
+                <label for="apellido-rescatista" class="form-label">Apellido: </label>
+                <input type="text" class="form-control" placeholder="Apellido" name="apellido-rescatista" required>
+                <span class="invalid-feedback">Este campo es requerido.</span>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-6 ">
+                <label>Seleccione tipo de documento: </label><br>
+                <select class="form-select" name="tipo-documento" required>
+                    <option value="" selected disabled>Seleccionar</option>
+                    <option value="DNI">DNI</option>
+                    <option value="LC">LC</option>
+                    <option value="LE">LE</option>
+                    <option value="CI">CI</option>
+                </select>
+                <span class="invalid-feedback">Este campo es requerido.</span>
+            </div>
+            <div class="col-6">
+                <label for="numero-documento" class="form-label">Numero de documento: </label>
+                <input type="number" class="form-control" placeholder="Numero de documento" name="numero-documento" required>
+                <span class="invalid-feedback">Este campo es requerido.</span>
+            </div>
+        </div>
+
+        <br>
+
+        <h5> Contacto  </h5>
+        <div class="row">
+            <div class="col-6 ">
+                <label for="nombre-contacto" class="form-label">Nombre: </label>
+                <input type="text" class="form-control" placeholder="Nombre" name="nombre-contacto" required>
+                <span class="invalid-feedback">Este campo es requerido.</span>
+            </div>
+            <div class="col-6 ">
+                <label for="apellido-contacto" class="form-label">Apellido: </label>
+                <input type="text" class="form-control" placeholder="Apellido" name="apellido-contacto" required>
+                <span class="invalid-feedback">Este campo es requerido.</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <label for="telefono" class="form-label">Teléfono: </label>
+                <input type="number" class="form-control" placeholder="Teléfono" name="telefono" required>
+                <span class="invalid-feedback">Este campo es requerido.</span>
+            </div>
+            <div class="col-6">
+                <label for="email" class="form-label">Email: </label>
+                <input type="email" class="form-control" placeholder="Email" name="email" required>
+                <span class="invalid-feedback">Este campo es requerido.</span>
+            </div>
+        </div>
+
+        <br>
+
+        <h5> Datos de la mascota encontrada </h5>
+        <div class="row">
+            <div class="col-6 ">
+                <label for="descripcion" class="form-label">Descripcion del estado en el cual la encontro: </label>
+                <input type="text" class="form-control" placeholder="Descripcion" name="descripcion" required>
+                <span class="invalid-feedback">Este campo es requerido.</span>
+            </div>
+            <div class="col-6 ">
+                <label for="foto" class="form-label">Subir Imagen</label>
+                <input type="file" accept="image/png, image/jpeg, image/jpg" class="form-control"
+                       id="foto" name="foto" required multiple>
+                <span class="invalid-feedback">Este campo es requerido.</span>
+            </div>
+        </div>
+        <br>
+        <h6>Ubicación donde la encontro</h6>
+        <div class="row">
+            <div class="col-4 ">
+                <label for="direccion" class="form-label">Direccion: </label>
+                <input type="text" class="form-control" placeholder="Direccion" name="direccion">
+            </div>
+            <div class="col-4 ">
+                <label for="latitud" class="form-label">Latitud: </label>
+                <input type="number" step="any"  class="form-control" placeholder="Latitud" name="latitud" required>
+                <span class="invalid-feedback">Este campo es requerido.</span>
+            </div>
+            <div class="col-4 ">
+                <label for="longitud" class="form-label">Longitud: </label>
+                <input type="number" step="any" class="form-control" placeholder="Longitud" name="longitud" required>
+                <span class="invalid-feedback">Este campo es requerido.</span>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-10"></div>
+            <div class="col-2">
+                <button type="submit" class="btn btn-primary">Confirmar</button>
+            </div>
+
+        </div>
+
+
+    </form>
+
+
+
+</div>
+
+{{/partial}}
+
+{{>layout-navbar.hbs}}

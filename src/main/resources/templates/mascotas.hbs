@@ -1,0 +1,62 @@
+{{#partial "contenido"}}
+
+<div class="card" style="width: 80%; margin: auto; margin-top: 3rem">
+
+  <div class="card-body">
+
+    <div class="d-flex justify-content-between align-items-center">
+      <h4 class="card-title">Mis Mascotas</h4>
+
+      <a href="mascotas/new" class="btn btn-success float-right" style="color: white; text-decoration: none;">
+        Nueva
+      </a>
+    </div>
+
+    <div class="container mt-4">
+
+      {{#unless mascotas}}
+      <div class="w-100" style="margin-left: -0.75rem; margin-bottom: 1.5rem!important;">
+        <h6>Todavía no registraste ninguna mascota.</h4>
+      </div>
+      {{/unless}}
+
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+
+        {{#each mascotas}}
+
+        <div class="col">
+          <div class="card">
+
+            <div style="height: 200px">
+              {{#if fotos}}
+              <img src="https://mascotas-bucket.s3.sa-east-1.amazonaws.com/{{fotos.[0]}}" class="card-img-top" alt="Imagen" width="200" height="200">
+              {{else}}
+              <div class="sin-imagen" style="height: 200px">Sin foto</div>
+              {{/if}}
+            </div>
+
+            <div class="card-body">
+
+              <h5 class="card-title divider-bottom">{{nombre}}</h5>
+              <h6 class="card-text">{{apodo}} - {{edad}} años</h6>
+              <span class="badge rounded-pill bg-info">{{capitalizeEnum sexo}}</span>
+              <p class="mt-2"><u>Descripción:</u> <br>
+                {{descripcion}}
+              </p>
+              <a href="/mascotas/{{id}}/qr">Imprimir QR</a>
+            </div>
+          </div>
+        </div>
+
+        {{/each}}
+
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+{{/partial}}
+
+{{>layout-navbar.hbs}}

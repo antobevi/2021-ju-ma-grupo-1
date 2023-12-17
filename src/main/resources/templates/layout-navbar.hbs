@@ -1,0 +1,21 @@
+{{#partial "contenido-navbar"}}
+<li class="nav-item ms-4 me-4 w-100">
+    <div class="d-grid gap-2 d-md-flex w-100">
+        {{#if usuario}}
+            <a class="nav-link" href="/mascotas">Mis mascotas</a>
+        {{/if}}
+
+        {{#if logueado}}
+            <button class="btn btn-warning justify-self-end ms-auto" type="button">
+                <a style="text-align: end; text-decoration: none; color: aliceblue" href="/sesssion/remove">Log out</a>
+            </button>
+        {{else}}
+            <button class="btn btn-warning justify-self-end ms-auto" type="button">
+                <a style="text-align: end; text-decoration: none; color: aliceblue" href="/login">Log in</a>
+            </button>
+        {{/if}}
+    </div>
+</li>
+{{/partial}}
+
+{{>layout.hbs}}

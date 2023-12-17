@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://java.sun.com/xml/ns/persistence
+    http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+             version="1.0">
+
+    <persistence-unit name="db" transaction-type="RESOURCE_LOCAL">
+        <provider>org.hibernate.ejb.HibernatePersistence</provider>
+
+        <class>caracteristicas.Caracteristica</class>
+        <class>caracteristicas.CaracteristicaMascota</class>
+        <class>usuarios.Admin</class>
+        <class>usuarios.Contacto</class>
+        <class>adopciones.preguntas.Pregunta</class>
+        <class>adopciones.preguntas.PreguntaRespondida</class>
+        <class>usuarios.Voluntario</class>
+        <class>usuarios.Asociacion</class>
+        <class>usuarios.Duenio</class>
+        <class>usuarios.Adoptante</class>
+        <class>mascotas.Mascota</class>
+        <class>usuarios.Duenio</class>
+        <class>publicaciones.PublicacionAdoptante</class>
+        <class>publicaciones.PublicacionAdopcion</class>
+        <class>mediosDeContacto.MedioDeContacto</class>
+        <class>mediosDeContacto.MailerGmail</class>
+        <class>mediosDeContacto.MensajeriaTwilio</class>
+        <class>mascotasEncontradas.MascotaEncontradaConChapita</class>
+        <class>mascotasEncontradas.PublicacionMascotaEncontrada</class>
+        <class>rescatistas.Rescatista</class>
+        <class>converters.LocalDateAttributeConverter</class>
+
+        <properties>
+
+            <!-- Local DB -->
+<!--            <property name="hibernate.archive.autodetection" value="class"/>-->
+<!--            <property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver"/>-->
+<!--            <property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/tpa"/>-->
+<!--            <property name="hibernate.connection.username" value="root"/>-->
+<!--            <property name="hibernate.connection.password" value=""/>-->
+
+            <!-- JawsDB (Heroku) -->
+            <property name="hibernate.archive.autodetection" value="class"/>
+            <property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver"/>
+            <property name="hibernate.connection.url" value="jdbc:mysql://jrz2et1hgicj2xgg:qz9kpag1nlw0c5mx@yjo6uubt3u5c16az.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/ya6lgfm0xxioduhz"/>
+            <property name="hibernate.connection.username" value="jrz2et1hgicj2xgg"/>
+            <property name="hibernate.connection.password" value="qz9kpag1nlw0c5mx"/>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5Dialect"/>
+
+
+<!--            <property name="hibernate.connection.driver_class" value="org.hsqldb.jdbcDriver"/>-->
+<!--            <property name="hibernate.connection.url" value="jdbc:hsqldb:mem:app-db"/>-->
+<!--            <property name="hibernate.connection.username" value="root"/>-->
+<!--            <property name="hibernate.connection.password" value="root"/>-->
+<!--            <property name="hibernate.dialect" value="org.hibernate.dialect.HSQLDialect"/>-->
+
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.format_sql" value="true"/>
+            <property name="use_sql_comments" value="true"/>
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
+        </properties>
+
+    </persistence-unit>
+
+</persistence>

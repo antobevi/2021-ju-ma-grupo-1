@@ -1,0 +1,66 @@
+{{#partial "contenido"}}
+
+{{#if mensajeVerde}}
+<div class="alert alert-success" role="alert">
+    {{mensajeVerde}}
+</div>
+{{/if}}
+{{#if mensajeRojo}}
+<div class="alert alert-danger" role="alert">
+    {{mensajeRojo}}
+</div>
+{{/if}}
+<div class="container-fluid border border-secondary rounded-3 p-3 mb-3">
+    <h2> Crear </h2>
+    <form method="POST" action="/caracteristicas" class="row gx-3 align-items-center ">
+        <div class="col-1">
+            <label for="inputNombre" class="col-form-label">Nombre:</label>
+        </div>
+        <div class="col-4">
+            <input required type="text" id="inputNombre" name="inputNombre" class="form-control"
+                placeholder="Nombre de la caracteristica nueva">
+        </div>
+        <div class="col-2">
+            <button type="submit" class="btn btn-success">Agregar</button>
+        </div>
+    </form>
+</div>
+
+<div class="container-fluid border border-secondary rounded-3 p-3">
+    <h2> Lista de caracteristicas </h2>
+    {{#unless caracteristicas}}
+    <p> No hay caracteristicas </p>
+    {{/unless}}
+    <ul class="list-group">
+        {{#each caracteristicas}}
+        <li class="list-group-item container">
+            <div class="row gx-3">
+                <div class="col-5">
+                    {{nombre}}
+                </div>
+
+                <form method="GET" action="/caracteristicas/{{id}}/edit/" class="col">
+                    <button id="editButton" type="submit" class="btn btn-primary btn-sm w-100">Editar</button>
+                </form>
+                <form method="POST" action="/caracteristicas/{{id}}/remove" class="col">
+                    <button id="deleteButton" type="submit" class="btn btn-danger btn-sm w-100">Borrar</button>
+                </form>
+            </div>
+        </li>
+        {{/each}}
+    </ul>
+</div>
+
+<script>
+    const deleteButtons = document.querySelectorAll('#deleteButton');
+    deleteButtons.forEach(button => {
+        button.addEventListener('click', event => {
+            if (!confirm('¿Estas seguro de que quieres borrar esta caracteristica?')) {
+                event.preventDefault();
+            }
+        });
+    });
+</script>
+{{/partial}}
+
+{{>layout-navbar.hbs}}

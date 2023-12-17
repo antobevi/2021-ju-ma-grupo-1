@@ -1,0 +1,136 @@
+{{#partial "contenido"}}
+
+    {{#if registrada}}
+    <div class="alert alert-success w-75 m-auto text-center p-2 main-center-container" role="alert">
+        <span>Mascota registrada correctamente!</span>
+        <a href="/mascotas">Ver mis mascotas</a>
+    </div>
+    {{/if}}
+
+    {{#if mensajeError}}
+    <div class="alert alert-danger w-75 m-auto text-center p-2 main-center-container" role="alert">
+        <span>{{mensajeError}}</span>
+    </div>
+    {{/if}}
+
+
+    <div class="card main-center-container">
+
+      <div class="card-body">
+
+        <h4 class="card-title mb-4">Registrar Mascota</h4>
+
+        <form method="POST" action="/mascotas" class="needs-validation" novalidate enctype="multipart/form-data">
+
+            <h5 class="card-subtitle mb-3 text-muted divider-bottom">Datos Generales</h5>
+
+            <div class="row align-items-center">
+                <div class="col-md align-self-stretch">
+                    <label class="form-label">Mascota</label>
+                    <div class="d-flex justify-content-between" style="font-size: 1.05rem">
+                        <div class="form-check form-check-inline w-50">
+                            <input class="form-check-input" type="radio" name="tipoMascota" id="radioPerro" value="PERRO" required>
+                            <label class="form-check-label" for="radioPerro">Perro</label>
+                            <span class="invalid-feedback" style="white-space: nowrap; margin-left: -1.5em;">
+                                Este campo es requerido.
+                            </span>
+                        </div>
+                        <div class="form-check form-check-inline w-50">
+                            <input class="form-check-input" type="radio" name="tipoMascota" id="radioGato" value="GATO" required>
+                            <label class="form-check-label" for="radioGato">Gato</label>
+                       </div>
+                    </div>
+               </div>
+
+                <div class="col-md">
+                    <label for="nombre" class="form-label">Nombre</label>
+                    <input type="text" class="form-control" id="nombre" name="nombre" required>
+                    <span class="invalid-feedback">Este campo es requerido.</span>
+                </div>
+
+            </div>
+
+            <div class="row mt-4">
+
+                <div class="col-md">
+                    <label for="apodo" class="form-label">Apodo</label>
+                    <input type="text" class="form-control" id="apodo" name="apodo" required>
+                    <span class="invalid-feedback">Este campo es requerido.</span>
+                </div>
+
+                <div class="col-md">
+                    <label for="edad" class="form-label">Edad</label>
+                    <input type="number" class="form-control" id="edad" name="edad" required>
+                    <span class="invalid-feedback">Este campo es requerido.</span>
+                </div>
+
+            </div>
+
+            <div class="row mt-4">
+
+                <div class="col-md">
+                    <label for="nombre" class="form-label">Sexo</label>
+                    <select class="form-select" id="sexo" name="sexo" required>
+                        <option value="" disabled hidden selected></option>
+                        <option value="HEMBRA">Hembra</option>
+                        <option value="MACHO">Macho</option>
+                    </select>
+                    <span class="invalid-feedback">Este campo es requerido.</span>
+                </div>
+
+                <div class="col-md">
+                    <label for="nombre" class="form-label">Descripcion</label>
+                    <input type="text" class="form-control" id="nombre" name="descripcion" required>
+                    <span class="invalid-feedback">Este campo es requerido.</span>
+                </div>
+
+            </div>
+
+            {{#if caracteristicas}}
+            <h5 class="card-subtitle mb-3 mt-4 text-muted divider-bottom">Caracteristicas</h5>
+
+            <div class="row ps-3 pe-3">
+                <table class="table last-row">
+                  <tbody>
+
+                    {{#each caracteristicas}}
+                    <tr>
+                        <td class="align-middle">{{nombre}}</td>
+                        <td>
+                            <input type="text" class="form-control" name="caracteristicas[{{nombre}}]">
+                        </td>
+                    </tr>
+
+                    {{/each}}
+                  </tbody>
+                </table>
+            </div>
+
+            {{/if}}
+
+
+            <h5 class="card-subtitle mb-3 mt-4 text-muted divider-bottom">Foto</h5>
+
+            <div class="row">
+                <div class="col-md">
+                <label for="foto" class="form-label">Subir Imagen</label>
+                <input type="file" accept="image/png, image/jpeg, image/jpg" class="form-control"
+                        id="foto" name="foto" required multiple>
+                <span class="invalid-feedback">Este campo es requerido.</span>
+                </div>
+            </div>
+
+            <div class="row mt-5 w-50 m-auto">
+                <button type="submit" class="btn btn-primary">Registrar Mascota</button>
+            </div>
+
+        </form>
+
+      </div>
+    </div>
+
+{{/partial}}
+
+
+{{>layout-navbar.hbs}}
+
