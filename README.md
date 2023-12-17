@@ -1,6 +1,6 @@
 # Rescate de Patitas
 
-Trabajo Práctico anual hecho en el año 2021 de la materia Diseño de Sistemas en UTN FRBA.
+Trabajo Práctico anual hecho en el año 2021 de la materia de 3er año Diseño de Sistemas en UTN FRBA.
 
 Objetivo:
 
